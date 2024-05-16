@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a7a8925472.js" crossorigin="anonymous"></script>
+    <title>MATH TOOLS</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url(https://www.re-thinkingthefuture.com/wp-content/uploads/2023/02/A9299-Do-You-Need-to-Be-Good-at-Maths-to-Study-Architecture-Image-1.jpg);
+            
+            color: white;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        nav {
+            display: flex;
+         gap: 50px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        h1,
+        h3 {
+            margin: 0;
+        }
+
+        main {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .tool-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px; 
+        }
+
+        div,
+        box2,
+        box3,
+        box4 {
+            margin-top: 300px;
+            border-radius: 8px;
+            color: black;
+            padding: 30px;
+            font-size: larger;
+            margin: 20px;
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        div:hover,
+        box2:hover,
+        box3:hover,
+        box4:hover {
+            transform: scale(1.05);
+        }
+
+        div {
+            border: 15px solid pink;
+            margin-left: 200px;
+        }
+
+        box2 {
+            border: 20px solid plum;
+           
+        }
+
+        box3 {
+            border: 15px solid limegreen;
+        }
+
+        box4 {
+            border: 15px solid lightblue;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        
+        body.light-mode {
+            background: url(https://images.theconversation.com/files/274417/original/file-20190514-60529-ktb5t3.jpg?ixlib=rb-1.1.0&q=20&auto=format&w=320&fit=clip&dpr=2&usm=12&cs=strip);
+            color: white;
+        }
+
+        body.dark-mode {
+            background:url(https://www.shutterstock.com/shutterstock/photos/1859813464/display_1500/stock-vector-math-horizontal-banner-presentation-website-isolated-lettering-typography-idea-with-icons-1859813464.jpg);
+            color: black;
+        }
+    </style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const body = document.body;
+        const toggleButton = document.getElementById("toggle-mode");
+
+        const isDarkMode = localStorage.getItem("darkMode") === "enabled";
+
+        if (isDarkMode) {
+            body.classList.add("dark-mode");
+        } else {
+            body.classList.remove("dark-mode");
+        }
+
+        toggleButton.addEventListener("click", function () {
+            body.classList.toggle("dark-mode");
+
+            const currentMode = body.classList.contains("dark-mode") ? "enabled" : "disabled";
+            localStorage.setItem("darkMode", currentMode);
+        });
+    });
+</script>
+</head>
+
+<body>
+<header>
+    <nav>
+        <a class="nav-link" href="#home">Home</a>
+        <a class="nav-link" href="#tool-calculator">Scientific Calculator</a>
+        <a class="nav-link" href="#bmi">BMI Calculator</a>
+        <a class="nav-link" href="#four-function">Four-Function Calculator</a>
+    </nav>
+    <button id="toggle-mode">Toggle Dark Mode</button>
+   
+</header>
+
+<main>
+    <div>
+        <h1>MATH TOOLS</h1>
+        <h3>Jump into a new dimension of math</h3>
+    </div>
+    <div id="home">
+        <b>Let's Learn Together</b><br>
+        At this webpage, we want to help everyone learn math, love math, and grow with math.
+    </div>
+
+    <div class="tool-container">
+        <box2 id="tool-calculator">
+            <b>SCIENTIFIC CALCULATOR</b><br>
+            A scientific calculator is a specialized calculator designed for performing complex mathematical and scientific calculations. Scientific calculators are commonly used by students, engineers, scientists, and professionals in various fields for tasks that involve advanced mathematics, statistics, trigonometry, calculus, and more.
+            <br><br><b><a href="calculator project.html">Click here to open the Scientific calculator</a></b>
+        </box2>
+
+        <box3 id="bmi">
+            <b>BMI CALCULATOR</b><br>
+            A BMI (Body Mass Index) calculator is a simple tool used to estimate a person's body fat based on their height and weight. It is a commonly used method to categorize individuals into different weight status categories, such as underweight, normal weight, overweight, and obese.
+            <br><br><b><a href="bmi1.html">Click here to open the BMI Calculator</a></b>
+        </box3>
+
+        <box4 id="four-function">
+            <b>FOUR-FUNCTION CALCULATOR</b><br>
+            A four-function calculator is a basic electronic calculator that performs four fundamental mathematical operations: addition, subtraction, multiplication, and division.
+            <br><br><b><a href="four function.html">Click here to open Four-Function Calculator</a></b>
+        </box4>
+    </div>
+</main>
+
+<footer>
+    &copy; 2023 Math Tools<br>
+    <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+</footer>
