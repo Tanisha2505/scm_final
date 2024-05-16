@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body class="container">
+
+<h1>BMI Calculator</h1>
+<br>
+     
+    <div class="input">
+        <label for="height"><b>Age:</b></label>
+        <input type="text" class="text input" id="age" autocomplete="off" required/>
+     </div>
+     <br>
+
+     <div>
+       <b>Gender:</b> <br> Male<input type="radio" name="my gender">Female<input type="radio" name="my gender">
+        other<input type="radio" name="my gender">
+    
+     </div>
+     <br>
+
+    <div class="form-group">
+        <label for="weight"><b>Weight (kg): </b></label>
+        <input type="number" class="form-control" id="weight" placeholder="Enter your weight" required>
+    </div>
+
+    <div class="form-group">
+        <label for="height"><b>Height (cm):</b></label>
+        <input type="number" class="form-control" id="height" placeholder="Enter your height" required>
+    </div>
+
+    <button class="btn btn-success mb-3" onclick="calculateBMI()">Calculate BMI</button>
+
+    <h2>Result:</h2>
+    <p id="result"></p>
+    <style>
+  h1{
+    text-align: center;
+  }
+    </style>
+
+    <script>
+        function calculateBMI() {
+            var weight = parseFloat(document.getElementById('weight').value);
+            var height = parseFloat(document.getElementById('height').value);
+
+            if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
+                alert("Please enter valid values for weight and height.");
+                return;
+            }
+
+            var heightInMeters = height / 100;
+            var bmi = weight / (heightInMeters * heightInMeters);
+
+            var resultElement = document.getElementById('result');
+            resultElement.innerHTML = 'Your BMI is: ' + bmi.toFixed(2);
+
+            if (bmi < 18.5) {
+                resultElement.innerHTML += ' - Underweight';
+            } else if (bmi >= 18.5 && bmi < 24.9) {
+                resultElement.innerHTML += ' - Normal weight';
+            } else if (bmi >= 25 && bmi < 29.9) {
+                resultElement.innerHTML += ' - Overweight';
+            } else {
+                resultElement.innerHTML += ' - Obesity';
+            }
+        }
+    </script>
+
+    <!-- Include Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
